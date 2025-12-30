@@ -7,7 +7,7 @@ class CategoriasModel(Base):
     __tablename__ = "categorias"
 
     pk_id = Column(Integer, primary_key=True, autoincrement=True)
-    id = Column(Integer, nullable=False)
+    id = Column(String(32), nullable=False)
     nome = Column(String(31),nullable=False)
 
     atletas = relationship(

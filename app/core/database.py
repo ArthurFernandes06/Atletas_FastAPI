@@ -11,7 +11,14 @@ DATABASE_URL = "sqlite:///./app.db"
 engine = create_engine(DATABASE_URL, echo=True)
 
 #Estabelece uma conexão segura com o banco de dados para executar os comandos SQL.
-session_local = sessionmaker(bind=engine)
+SessionLocal = sessionmaker(bind=engine)
 
 #É a base que nossos models vão herdar para a orm mapear.
 Base = declarative_base()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
