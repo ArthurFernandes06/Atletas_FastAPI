@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class CreateCentroTreinamento(BaseModel):
+class CentroTreinamentoCreate(BaseModel):
     nome: str
     endereco: str
     proprietario: str

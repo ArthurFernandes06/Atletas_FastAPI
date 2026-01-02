@@ -6,6 +6,7 @@ class AtletaCreate(BaseModel):
     id: str
     nome: str
     cpf: str
+    idade: int
     peso: float
     altura: float
     sexo: Optional[str]
